@@ -14,9 +14,13 @@ alias dev="cd ~/dev"
 alias talks="cd ~/Dropbox/talks/"
 alias g="git"
 
+# Functions
+alias cc=create-commits.sh
+
 # Live
-alias livelog="while true;do clear;git l --all;sleep 1;done"
-alias livetree="while true; do clear; tree $1;sleep 1;done"
+alias livelog="watch --color --interval=1 --no-title 'git l --all'"
+alias livegit="while true; do clear; tree .git;sleep 1;done"
+alias livetree="while true; do clear; tree;sleep 1;done"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
