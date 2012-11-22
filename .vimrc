@@ -41,6 +41,17 @@ syntax on
 " set cursorline
 " Make tabs as wide as two spaces
 set tabstop=2
+syntax on 
+set syn=auto 
+set showmatch 
+filetype on 
+filetype plugin on 
+filetype indent on 
+set tabstop=2 
+set softtabstop=2
+set shiftwidth=2 
+set expandtab
+
 " Highlight searches
 set hlsearch
 " Ignore case of searches
@@ -88,3 +99,9 @@ if has("autocmd")
 	" Treat .json files as .js
 	autocmd BufNewFile,BufRead *.json setfiletype json syntax=javascript
 endif
+
+call pathogen#infect()
+
+autocmd vimenter * if !argc() | NERDTree | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
