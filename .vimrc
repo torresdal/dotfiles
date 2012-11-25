@@ -1,5 +1,3 @@
-" Use the Twilight theme
-color twilight
 " Make Vim more useful
 set nocompatible
 " Use the OS clipboard by default (on versions compiled with `+clipboard`)
@@ -56,6 +54,8 @@ set expandtab
 set hlsearch
 " Ignore case of searches
 set ignorecase
+" Unless one or more capitalized chaacters
+set smartcase
 " Highlight dynamically as pattern is typed
 set incsearch
 " Always show status line
@@ -80,6 +80,9 @@ set showcmd
 " Start scrolling three lines before the horizontal window border
 set scrolloff=3
 
+" Show relative line numbers
+set relativenumber
+
 " Strip trailing whitespace (,ss)
 function! StripWhitespace()
 	let save_cursor = getpos(".")
@@ -92,6 +95,27 @@ noremap <leader>ss :call StripWhitespace()<CR>
 " Save a file as root (,W)
 noremap <leader>W :w !sudo tee % > /dev/null<CR>
 
+" Clear highlight (, )
+nnoremap <leader><space> :noh<cr>
+" Match bracket pairs with tab
+nnoremap <tab> %
+vnoremap <tab> %
+
+" Disable the arrow keys :)
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+nnoremap j gj
+nnoremap k gk
+
+nnoremap <silent> <Leader>+ :exe "vertical resize +1"<CR>
+nnoremap <silent> <Leader>- :exe "vertical resize -1"<CR>
+
 " Automatic commands
 if has("autocmd")
 	" Enable file type detection
@@ -99,8 +123,9 @@ if has("autocmd")
 	" Treat .json files as .js
 	autocmd BufNewFile,BufRead *.json setfiletype json syntax=javascript
 endif
-
 call pathogen#infect()
+
+color wombat256mod
 
 autocmd vimenter * if !argc() | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
