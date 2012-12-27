@@ -13,6 +13,7 @@ alias dl="cd ~/Downloads"
 alias dev="cd ~/dev"
 alias talks="cd ~/Dropbox/talks/"
 alias g="git"
+alias v="vim"
 
 # Functions
 alias cc=create-commits.sh

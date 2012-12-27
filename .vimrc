@@ -33,23 +33,18 @@ set exrc
 set secure
 " Enable line numbers
 set number
+" Show relative line numbers
+set relativenumber
 " Enable syntax highlighting
 syntax on
-" Highlight current line
-" set cursorline
-" Make tabs as wide as two spaces
-set tabstop=2
-syntax on 
 set syn=auto 
+" Highlight the matching braces|brackets|parens
 set showmatch 
-filetype on 
-filetype plugin on 
-filetype indent on 
+" Make tabs as wide as two spaces
 set tabstop=2 
 set softtabstop=2
 set shiftwidth=2 
 set expandtab
-
 " Highlight searches
 set hlsearch
 " Ignore case of searches
@@ -60,8 +55,6 @@ set smartcase
 set incsearch
 " Always show status line
 set laststatus=2
-" Enable mouse in all modes
-set mouse=a
 " Disable error bells
 set noerrorbells
 " Don’t reset cursor to start of line when moving around.
@@ -76,12 +69,8 @@ set showmode
 set title
 " Show the (partial) command as it’s being typed
 set showcmd
-
 " Start scrolling three lines before the horizontal window border
 set scrolloff=3
-
-" Show relative line numbers
-set relativenumber
 
 " Strip trailing whitespace (,ss)
 function! StripWhitespace()
@@ -113,20 +102,25 @@ inoremap <right> <nop>
 nnoremap j gj
 nnoremap k gk
 
+" Resize vertical split (,+/-)
 nnoremap <silent> <Leader>+ :exe "vertical resize +1"<CR>
 nnoremap <silent> <Leader>- :exe "vertical resize -1"<CR>
 
-" Automatic commands
-if has("autocmd")
-	" Enable file type detection
-	filetype on
-	" Treat .json files as .js
-	autocmd BufNewFile,BufRead *.json setfiletype json syntax=javascript
-endif
+" Enable file type detection
+filetype on
+filetype plugin on 
+filetype indent on 
+" Load all bundles
 call pathogen#infect()
 
+" Load color scheme
 color wombat256mod
+" Make comments darker
+hi Comment ctermfg=235
 
+" Treat .json files as .js
+autocmd BufNewFile,BufRead *.json setfiletype json syntax=javascript
+" Start NERDTree if vim was opened with no file argument
 autocmd vimenter * if !argc() | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
