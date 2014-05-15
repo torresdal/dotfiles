@@ -37,13 +37,13 @@ set number
 set relativenumber
 " Enable syntax highlighting
 syntax on
-set syn=auto 
+set syn=auto
 " Highlight the matching braces|brackets|parens
-set showmatch 
+set showmatch
 " Make tabs as wide as two spaces
-set tabstop=2 
+set tabstop=2
 set softtabstop=2
-set shiftwidth=2 
+set shiftwidth=2
 set expandtab
 " Highlight searches
 set hlsearch
@@ -108,8 +108,8 @@ nnoremap <silent> <Leader>- :exe "vertical resize -1"<CR>
 
 " Enable file type detection
 filetype on
-filetype plugin on 
-filetype indent on 
+filetype plugin on
+filetype indent on
 " Load all bundles
 call pathogen#infect()
 
@@ -123,4 +123,3 @@ autocmd BufNewFile,BufRead *.json setfiletype json syntax=javascript
 " Start NERDTree if vim was opened with no file argument
 autocmd vimenter * if !argc() | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-
