@@ -1,7 +1,3 @@
-[user]
-  name = thedersen
-  email = thedersen@gmail.com
-
 [alias]
   a = add -A
   ai = add -i
