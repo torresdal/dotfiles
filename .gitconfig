@@ -12,6 +12,8 @@
   rh = reset --hard
   rh1 = reset HEAD^ --hard
   br = branch
+  d = diff
+  dc = diff --cached
   s = status
   l = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset'
   ll = log --stat --abbrev-commit
@@ -52,6 +54,9 @@
 [merge]
 	# Include summaries of merged commits in newly created merge commit messages
 	log = true
+
+[push]
+  default = matching
 
 [mergetool]
   keepBackup = false
