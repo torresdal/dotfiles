@@ -18,6 +18,7 @@ alias v="vim"
 
 # Functions
 alias cc=create-commits.sh
+alias rg="rm -rf * .git && git init"
 
 # Live
 alias livelog="watch --color --interval=1 --no-title 'git l --all'"
