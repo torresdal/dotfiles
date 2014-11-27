@@ -5,6 +5,7 @@
   c = commit
   cm = commit -m
   amend = !git log -n 1 --pretty=tformat:%s%n%n%b | git commit -F - --amend
+  pr = pull --rebase
   cp = cherry-pick
   ri = "!r() { git rebase -i HEAD~$1; }; r"
   r = reset
