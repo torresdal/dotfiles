@@ -22,11 +22,11 @@ install node
 install tree
 install ios-sim
 install phantomjs
-install tmux
 install hub
 install vim --override-system-vi
 install bash-completion
 install hub
+install httpry
 
 # Remove outdated versions from the cellar
 cleanup
