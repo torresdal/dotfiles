@@ -18,6 +18,6 @@ cask install google-drive> /dev/null
 cask install heroku-toolbelt> /dev/null
 cask install rdio> /dev/null
 cask install skype> /dev/null
-cask install vmware-fusion> /dev/null
+# cask install vmware-fusion> /dev/null
 cask install appcleaner> /dev/null
 cask install firefox> /dev/null

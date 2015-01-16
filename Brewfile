@@ -1,32 +1,32 @@
 #!/bin/bash
 
 # Make sure we’re using the latest Homebrew
-update
+brew update
 
 # Upgrade any already-installed formulae
-upgrade
+brew upgrade
 
 # Install GNU core utilities (those that come with OS X are outdated)
-install coreutils
+brew install coreutils
 #echo "Don’t forget to add $(brew --prefix coreutils)/libexec/gnubin to \$PATH."
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
-install findutils
+brew install findutils
 
 # Install wget with IRI support
-install wget --enable-iri
+brew install wget --enable-iri
 
 
 # Install everything else
-install imagemagick
-install node
-install tree
-install ios-sim
-install phantomjs
-install hub
-install vim --override-system-vi
-install bash-completion
-install hub
-install httpry
+brew install imagemagick
+brew install node
+brew install tree
+brew install ios-sim
+brew install phantomjs
+brew install hub
+brew install vim --override-system-vi
+brew install bash-completion
+brew install hub
+brew install httpry
 
 # Remove outdated versions from the cellar
-cleanup
+brew cleanup

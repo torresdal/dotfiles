@@ -13,10 +13,10 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 ###############################################################################
 
 # Set computer name (as done via System Preferences → Sharing)
-sudo scutil --set ComputerName "tpe-book"
-sudo scutil --set HostName "tpe-book"
-sudo scutil --set LocalHostName "tpe-book"
-sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "tpe-book"
+sudo scutil --set ComputerName "jat-book"
+sudo scutil --set HostName "jat-book"
+sudo scutil --set LocalHostName "jat-book"
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "jat-book"
 
 defaults write com.apple.menuextra.battery ShowPercent -string "YES"
 defaults write com.apple.menuextra.battery ShowTime -string "NO"
