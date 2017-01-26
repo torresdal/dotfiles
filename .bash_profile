@@ -39,8 +39,28 @@ complete -W "NSGlobalDomain" defaults
 # Add tab completion for git alias g
 complete -o default -o nospace -F _git g
 
+# Add tab completion for AWS
+complete -C '/usr/local/bin/aws_completer' aws
+
 # If possible, add tab completion for many more commands
 [ -f $(brew --prefix)/etc/bash_completion ] && source $(brew --prefix)/etc/bash_completion
 
 # Un-prefix coreutils
 PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+
+# Auto discover Java SDK and set JAVA_HOME
+function setjdk() {
+  if [ $# -ne 0 ]; then
+   removeFromPath '/System/Library/Frameworks/JavaVM.framework/Home/bin'
+   if [ -n "${JAVA_HOME+x}" ]; then
+    removeFromPath $JAVA_HOME
+   fi
+   export JAVA_HOME=`/usr/libexec/java_home -v $@`
+   export PATH=$JAVA_HOME/bin:$PATH
+  fi
+ }
+ function removeFromPath() {
+  export PATH=$(echo $PATH | sed -E -e "s;:$1;;" -e "s;$1:?;;")
+ }
+
+setjdk 1.8
