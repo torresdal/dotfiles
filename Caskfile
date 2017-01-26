@@ -1,15 +1,14 @@
 #!/bin/bash
 
 # Install native apps
-# Usage: `brew bundle Caskfile`
+# Usage: `./Caskfile`
 
-brew install caskroom/cask/brew-cask
+brew tap caskroom/cask
 brew tap caskroom/versions
 
 brew cask install dropbox 2> /dev/null
 brew cask install google-chrome 2> /dev/null
 brew cask install google-chrome-canary 2> /dev/null
-brew cask install opera 2> /dev/null
 brew cask install sublime-text 2> /dev/null
 brew cask install transmission 2> /dev/null
 brew cask install atom> /dev/null
@@ -23,3 +22,16 @@ brew cask install skype> /dev/null
 # brew cask install vmware-fusion> /dev/null
 brew cask install appcleaner> /dev/null
 brew cask install firefox> /dev/null
+brew cask install adobe-reader> /dev/null
+brew cask install gimp> /dev/null
+brew cask install omnigraffle> /dev/null
+brew cask install bettertouchtool> /dev/null
+brew cask install caffeine> /dev/null
+brew cask install charles> /dev/null
+brew cask install Caskroom/cask/java> /dev/null
+brew cask install gradle> /dev/null
+brew cask install intellij-idea-ce> /dev/null
+brew cask install dockertoolbox> /dev/null
+brew cask install calibre> /dev/null
+brew cask install webstorm> /dev/null
+brew cask install jet> /dev/null
