@@ -11,8 +11,8 @@ alias .....="cd ../../../.."
 alias db="cd ~/Dropbox"
 alias dl="cd ~/Downloads"
 alias dev="cd ~/dev"
-alias work="cd ~/dev/work"
-alias talks="cd ~/Dropbox/talks/"
+alias work="cd ~/work"
+alias talks="cd ~/Dropbox/Presentations/"
 alias g="git"
 alias v="vim"
 
@@ -104,3 +104,26 @@ alias badge="tput bel"
 for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
 	alias "$method"="lwp-request -m '$method'"
 done
+
+# Docker Cloud aliases
+alias dockerc='docker-cloud'
+alias dc-action='docker-cloud action'
+alias dc-container='docker-cloud container'
+alias dc-event='docker-cloud event'
+alias dc-exec='docker-cloud exec'
+alias dc-ex='dc-exec'
+alias dc-node='docker-cloud node'
+alias dc-nodecluster='docker-cloud nodecluster'
+alias dc-nc='dc-nodecluster'
+alias dc-repository='docker-cloud repository'
+alias dc-repo='dc-repository'
+alias dc-run='docker-cloud run'
+alias dc-service='docker-cloud service'
+alias dc-srvc='dc-service'
+alias dc-svc='dc-service'
+alias dc-stack='docker-cloud stack'
+alias dc-stk='dc-stack'
+alias dc-tag='docker-cloud tag'
+alias dc-trigger='docker-cloud trigger'
+alias dc-trig='dc-trigger'
+alias dc-up='docker-cloud up'
