@@ -33,5 +33,14 @@ brew install mongodb
 brew install docker-cloud
 brew install consul-template
 brew install vault
+brew install kops
+brew install terraform
+brew install graphviz
+brew install leiningen
+brew install kubernetes-helm
 # Remove outdated versions from the cellar
+
+brew tap wercker/wercker
+brew install wercker-cli
+
 brew cleanup
