@@ -38,6 +38,7 @@ brew install terraform
 brew install graphviz
 brew install leiningen
 brew install kubernetes-helm
+brew install azure-cli
 # Remove outdated versions from the cellar
 
 brew tap wercker/wercker
