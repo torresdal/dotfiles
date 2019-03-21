@@ -34,3 +34,4 @@ brew cask install hipchat 2> /dev/null
 brew cask install minikube 2> /dev/null
 brew cask install cheatsheet 2> /dev/null
 brew cask install kindle 2> /dev/null
+brew cask install karabiner-elements> /dev/null

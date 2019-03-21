@@ -43,5 +43,6 @@ brew install azure-cli
 
 brew tap wercker/wercker
 brew install wercker-cli
+brew install hugo
 
 brew cleanup
