@@ -39,10 +39,13 @@ brew install graphviz
 brew install leiningen
 brew install kubernetes-helm
 brew install azure-cli
+brew install datawire/blackbird/telepresence
 # Remove outdated versions from the cellar
 
 brew tap wercker/wercker
 brew install wercker-cli
 brew install hugo
+brew install bash
+brew install bash-completion@2
 
 brew cleanup

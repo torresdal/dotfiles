@@ -48,19 +48,20 @@ complete -C '/usr/local/bin/aws_completer' aws
 # Un-prefix coreutils
 PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 
-# Auto discover Java SDK and set JAVA_HOME
-function setjdk() {
-  if [ $# -ne 0 ]; then
-   removeFromPath '/System/Library/Frameworks/JavaVM.framework/Home/bin'
-   if [ -n "${JAVA_HOME+x}" ]; then
-    removeFromPath $JAVA_HOME
-   fi
-   export JAVA_HOME=`/usr/libexec/java_home -v $@`
-   export PATH=$JAVA_HOME/bin:$PATH
-  fi
- }
- function removeFromPath() {
-  export PATH=$(echo $PATH | sed -E -e "s;:$1;;" -e "s;$1:?;;")
- }
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-setjdk 1.8
+# Echo current Node version using nvm
+echo 'Current Node JS version:' $(node --version)
+echo 'Use nvm to change/install Node JS version'
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/jont/google-cloud-sdk/path.bash.inc' ]; then source '/Users/jont/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/jont/google-cloud-sdk/completion.bash.inc' ]; then source '/Users/jont/google-cloud-sdk/completion.bash.inc'; fi
+
+# Bash completion for kubectl
+[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
+source <(kubectl completion bash)

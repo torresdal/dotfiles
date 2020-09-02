@@ -35,3 +35,5 @@ brew cask install minikube 2> /dev/null
 brew cask install cheatsheet 2> /dev/null
 brew cask install kindle 2> /dev/null
 brew cask install karabiner-elements> /dev/null
+brew cask install keybase> /dev/null
+brew cask install osxfuse> /dev/null
